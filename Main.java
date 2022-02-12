@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 
+/**
+ * @author Adrian Flores
+ *
+ */
 class Main{
 
 	public static void main(String[] args){
@@ -9,6 +13,7 @@ class Main{
 		PosfixCalc calc = new PosfixCalc();
 		
 		ArrayList<String> lineas = new ArrayList<String>();
+		
 
 		int resultado;
 
