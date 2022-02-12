@@ -1,11 +1,13 @@
 /**
  * @author Adrian Flores
- *	Yo sé que es Postfix pero la interfaz viene como Posfix y no vengo como pa tomar riesgos hoy.
+ *	Yo sé que es Postfix pero la interfaz viene como Posfix y no estoy como para tomar riesgos hoy.
  */
 class PosfixCalc implements IPosfixCalc{
 
 	/***
 	 * This method is used to evaluate a postfix expression
+	 * Pre: Expresion no vacia
+	 * Post: evaluación de la expresion 
 	 * @param expresion this is a single expression like: 1 2 + 4 * 3 +
 	 * @return the evaluation of the expression (-998 si hay error de entrada y -999 para division entre 0. Si la expresion naturalmente da esos resultados, too bad!)
 	 */

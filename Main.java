@@ -36,17 +36,19 @@ class Main{
 
 		//Se itera sobre cada expresion
 		for(int i = 0; i<lineas.size() ; i++){
-			System.out.println(lineas.get(i));
-			//Se almacena el resultado de la expresion en una variable para poder utilizarlo en múltiples lugares sin tener que estar llamando la función cada vez.
-			resultado = calc.Evaluate(lineas.get(i));
-			//Se revisan los códigos de error definidos en la documentacion de Evaluate para poder mostrar el mensaje correcto
-			if(resultado != -999 && resultado != -998){
-				System.out.println("= " + resultado + "\n"); //Resultado normal
-			} else {
-				System.out.println((resultado==-999)?"Division entre 0\n":"Error de entrada, revise el archivo\n"); //en caso de error
+			//Por si se le pasa una expresion vacia a la calculadora
+			try{
+				System.out.println(lineas.get(i));
+				//Se almacena el resultado de la expresion en una variable para poder utilizarlo en múltiples lugares sin tener que estar llamando la función cada vez.
+				resultado = calc.Evaluate(lineas.get(i));
+				//Se revisan los códigos de error definidos en la documentacion de Evaluate para poder mostrar el mensaje correcto
+				if(resultado != -999 && resultado != -998){
+					System.out.println("= " + resultado + "\n"); //Resultado normal
+				} else {
+					System.out.println((resultado==-999)?"Division entre 0\n":"Error de entrada, revise el archivo\n"); //en caso de error
+				}
+			} catch(IndexOutOfBoundsException e){
 			}
-			
-
 		}
 
 	}
