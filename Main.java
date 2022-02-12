@@ -10,6 +10,8 @@ class Main{
 		
 		ArrayList<String> lineas = new ArrayList<String>();
 
+		int resultado;
+
 		try{
 			File archivo = new File("datos.txt");
 			Scanner lector = new Scanner(archivo);
@@ -22,8 +24,9 @@ class Main{
 		}
 
 		for(int i = 0; i<lineas.size() ; i++){
-			calc.Evaluate(lineas.get(i));
-
+			System.out.println(lineas.get(i));
+			resultado = calc.Evaluate(lineas.get(i));
+			System.out.println("= " + resultado + "\n");
 		}
 
 	}

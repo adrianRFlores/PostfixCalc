@@ -8,6 +8,38 @@ class PosfixCalc implements IPosfixCalc{
 	@Override
 	public int Evaluate(String expresion){
 		StackArrayList<Integer> stack = new StackArrayList<Integer>();
-		return 0;
+		int op1, op2;
+		for(int i = 0; i < expresion.length(); i++){
+			if(Character.isDigit(expresion.charAt(i))){
+				stack.push(Character.getNumericValue(expresion.charAt(i)));
+			}
+			else if(!Character.isWhitespace(expresion.charAt(i))){
+				try{
+					op2 = stack.pull();
+					op1 = stack.pull();
+					switch(Character.toString(expresion.charAt(i))){
+						case "+":
+							stack.push(op1 + op2);
+							break;
+						case "-":
+							stack.push(op1 - op2);
+							break;
+						case "*":
+							stack.push(op1 * op2);
+							break;
+						case "/":
+							try{
+								stack.push(op1 / op2);
+							} catch(ArithmeticException e){
+								return 0;
+							}
+							break;
+					}
+				} catch(Exception e){
+					return 0;
+				}
+			}
+		}
+		return stack.peek();
 	}
 }
