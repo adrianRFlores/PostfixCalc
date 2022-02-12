@@ -10,5 +10,21 @@ class Main{
 		
 		ArrayList<String> lineas = new ArrayList<String>();
 
+		try{
+			File archivo = new File("datos.txt");
+			Scanner lector = new Scanner(archivo);
+			while(lector.hasNextLine()){
+				lineas.add(lector.nextLine());
+			}
+			lector.close();
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+
+		for(int i = 0; i<lineas.size() ; i++){
+			calc.Evaluate(lineas.get(i));
+
+		}
+
 	}
 }
