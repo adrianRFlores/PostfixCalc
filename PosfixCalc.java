@@ -31,7 +31,6 @@ class PosfixCalc implements IPosfixCalc{
 				try{
 					op2 = stack.pull(); //Operando 2
 					op1 = stack.pull();	//Operando 1
-					System.out.println(op1 + " " + op2);
 
 					//Se convierte el caracter a un string para poder compararlo en un switch-case
 					switch(Character.toString(expresion.charAt(i))){
