@@ -31,12 +31,14 @@ class PosfixCalc implements IPosfixCalc{
 							try{
 								stack.push(op1 / op2);
 							} catch(ArithmeticException e){
-								return 0;
+								return -999;
 							}
 							break;
+						default:
+							return -998;
 					}
 				} catch(Exception e){
-					return 0;
+					return -998;
 				}
 			}
 		}

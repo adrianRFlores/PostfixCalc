@@ -26,7 +26,13 @@ class Main{
 		for(int i = 0; i<lineas.size() ; i++){
 			System.out.println(lineas.get(i));
 			resultado = calc.Evaluate(lineas.get(i));
-			System.out.println("= " + resultado + "\n");
+			if(resultado != -999 && resultado != -998){
+				System.out.println("= " + resultado + "\n");
+			} else {
+				System.out.println((resultado==-999)?"Division entre 0\n":"Error de entrada, revise el archivo\n");
+			}
+			
+
 		}
 
 	}
